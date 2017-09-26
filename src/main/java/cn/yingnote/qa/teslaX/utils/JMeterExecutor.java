@@ -31,6 +31,8 @@ public class JMeterExecutor {
     private int JMETER_THREAD_NUM;
     @Value("${jmeter.duration}")
     private int JMETER_DURATION;
+    @Value("${jmeter.method}")
+    private String JMETER_METHOD;
 
     public String jmeterRun(URL urlParse) {
         //JMeter Engine
@@ -74,6 +76,7 @@ public class JMeterExecutor {
         httpSampler.setDomain(urlParse.getHost());
         httpSampler.setPort(urlParse.getPort());
         httpSampler.setPath(urlParse.getPath());
+        httpSampler.setMethod(JMETER_METHOD);
 
         // Thread Group
         ThreadGroup threadGroup = new ThreadGroup();

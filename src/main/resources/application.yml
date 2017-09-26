@@ -5,6 +5,7 @@ jmeter:
   log: /Users/guolei/webtool/jmeter/result/result.jtl
   thread-number: 2
   duration: 60
+  method: GET
 
 # 打开 debug 日志
 logging:
@@ -20,3 +21,4 @@ spring:
     password: test
     virtual-host: qa_mq
     connection-timeout: 10000
+
