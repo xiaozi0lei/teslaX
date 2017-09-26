@@ -1,0 +1,22 @@
+# jmeter 的路径，压测线程数，压测时间
+jmeter:
+  properties: /Users/guolei/webtool/jmeter/bin/jmeter.properties
+  home: /Users/guolei/webtool/jmeter
+  log: /Users/guolei/webtool/jmeter/result/result.jtl
+  thread-number: 2
+  duration: 60
+
+# 打开 debug 日志
+logging:
+  level:
+    cn.yingnote.qa.teslaX: debug
+
+# rabbitMQ 配置
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: test
+    password: test
+    virtual-host: qa_mq
+    connection-timeout: 10000

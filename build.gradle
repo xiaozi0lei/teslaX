@@ -1,0 +1,71 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.7.RELEASE'
+	}
+
+	ext["thymeleaf.version"] = '3.0.6.RELEASE'
+	ext["thymeleaf-layout-dialect.version"] = '2.2.2'
+
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'cn.yingnote.qa'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+
+    // thymeleaf 模板引擎
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    // thymeleaf 模板布局方言 layout dialect
+    compile('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
+    // spring web
+    compile('org.springframework.boot:spring-boot-starter-web')
+    // mysql
+    runtime('mysql:mysql-connector-java')
+    // 进行 http 请求的支持库
+    compile('io.rest-assured:rest-assured:3.0.3')
+    // javamail
+    compile('org.springframework.boot:spring-boot-starter-mail')
+	// rest-assured
+	compile 'io.rest-assured:rest-assured:3.0.3'
+    // JMeter support
+    compile('org.apache.jmeter:ApacheJMeter_http:3.2'){
+        exclude module: "log4j-slf4j-impl"
+        exclude module: "mongo-java-driver"
+    }
+    // rabbitMQ
+	compile('org.springframework.boot:spring-boot-starter-amqp')
+
+    // LDAP
+//	compile('org.springframework.boot:spring-boot-starter-data-ldap')
+    // redis
+//	compile('org.springframework.boot:spring-boot-starter-data-redis')
+    // mybatis
+//	compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.1')
+    // MyBatis 分页插件
+//  compile('com.github.pagehelper:pagehelper-spring-boot-starter:1.2.0')
+    // spring security
+//	compile('org.springframework.boot:spring-boot-starter-security')
+    // 支持模板页面授权
+//  compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4:3.0.2.RELEASE')
+    // session
+//	compile('org.springframework.session:spring-session')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.security:spring-security-test')
+}

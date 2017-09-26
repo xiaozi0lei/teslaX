@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8"/>
+    <title>tesla X</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container theme-showcase" role="main">
+
+        <div class="jumbotron">
+
+            <h1>Tesla X</h1>
+
+            <form action="/performance/test" method="post">
+                <div class="form-group">
+                    <label for="address">直接压测</label>
+                    <input class="form-control" id="address" name="address" placeholder="请输入压测地址"/>
+                </div>
+                <button type="submit" class="btn btn-primary">提交</button>
+            </form>
+
+            <form action="/performance/test1" method="post">
+                <div class="form-group">
+                    <label for="address1">放入队列压测</label>
+                    <input class="form-control" id="address1" name="address1" placeholder="请输入压测地址"/>
+                </div>
+                <button type="submit" class="btn btn-primary">提交</button>
+            </form>
+
+        </div>
+
+    </div> <!-- /container -->
+</div>
+
+</body>
+</html>
